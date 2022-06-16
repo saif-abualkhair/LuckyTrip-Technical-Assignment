@@ -13,8 +13,10 @@ body, html {
 .page_image_container {
     width: 100%;
     height: 400px;
-    /* z-index: 0; */
-    /* add inset box-shadow to image  */
+}
+
+.vignette_effect{
+    box-shadow: inset 0 0 100px black;
 }
 
 .container {
@@ -25,6 +27,16 @@ body, html {
     margin-left: auto;
     box-sizing: border-box;
 } 
+
+.text_large{
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.text_small{
+    font-size: 1.4rem;
+    font-weight: 400;
+}
 @media (min-width: 576px) {
     .container {
         width: 540px;
