@@ -5,7 +5,11 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./home-page/home-page.module').then(m => m.HomePageModule)
-  }
+  },
+  {
+    path: 'Destination',
+    loadChildren: () => import('./destination/destination.module').then(m => m.DestinationModule)
+  },
 ];
 
 @NgModule({
