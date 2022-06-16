@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'lta-header',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  isSearchVisable: boolean = false;
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit(): void {
+    this.location.onUrlChange(v => {
+      this.isSearchVisable = v !== '/' ? true : false;
+    })
   }
-
 }
