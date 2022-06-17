@@ -3,16 +3,16 @@
         <div class="page_image img vignette_effect">
             <div class="page_image_content">
                 <div class="text">
-                        <p class="text_large">Search LuckyTrip</p>
-                        <p class="description text_small"> 350 destinations, 1500 blog posts, Unlimited Trips</p>
-                        <div class="search_box_area">
-                            <lta-main-search></lta-main-search>
-                        </div>
+                    <p class="text_large">Search LuckyTrip</p>
+                    <p class="description text_small"> 350 destinations, 1500 blog posts, Unlimited Trips</p>
+                    <div class="search_box_area">
+                        <lta-main-search></lta-main-search>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <lta-content-area>
-        <lta-blog-posts></lta-blog-posts>
+        <lta-blog-posts [title]="'Trending'" [posts]="[1,2,3,4,5,6]"></lta-blog-posts>
     </lta-content-area>
 </div>
