@@ -1,7 +1,4 @@
 .top_shadow {
     position: relative;
-    z-index: 1;
-    box-shadow: 0px -20px 25px 0px #211f2af2,
-        0px -20px 20px 0px #211f2a57,
-        0px -20px 20px 0px #211f2a57;
+    box-shadow: 0px -20px 25px 12px #211f2af2, 0px -20px 20px 20px #211f2ae0, 0px -20px 20px 20px #211f2a8a;
 }
