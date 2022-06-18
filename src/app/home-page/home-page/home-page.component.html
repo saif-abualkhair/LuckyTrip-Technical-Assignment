@@ -6,7 +6,9 @@
                     <p class="text_large">Search LuckyTrip</p>
                     <p class="description text_small"> 350 destinations, 1500 blog posts, Unlimited Trips</p>
                     <div class="search_box_area">
-                        <lta-main-search></lta-main-search>
+                        <form [formGroup] = "formGroup" (ngSubmit)="routeToDestination()">
+                            <lta-main-search [formControlName] = "'mainSearch'"></lta-main-search>
+                        </form>
                     </div>
                 </div>
             </div>
