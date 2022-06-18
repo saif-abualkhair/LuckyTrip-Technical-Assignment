@@ -7,7 +7,8 @@
 }
 
 .go_button,
-.search_icon {
+.search_icon,
+.loader {
     position: absolute;
     top: 50%;
     z-index: 3;
@@ -37,8 +38,6 @@
 
 .main_search_box {
     position: relative;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     border-radius: 25px;
@@ -47,8 +46,6 @@
     color: white;
     padding-left: 40px;
     box-sizing: border-box;
-    /* add inset box-shadow */
-    /* box-shadow: inset 3px 3px 8px 1px #0000003b; */
 }
 
 .main_search_box:focus-visible {
@@ -58,4 +55,37 @@
 .main_search_box::placeholder {
     color: white;
     font-size: 1.1rem;
+}
+
+.no_text_select {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.drop_down_item {
+    padding: 10px;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.drop_down_item:hover {
+    background-color: #ff618e;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.loader {
+    left: -45px;
 }

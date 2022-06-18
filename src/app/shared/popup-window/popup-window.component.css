@@ -1,0 +1,22 @@
+.window_wrapper {
+    position: absolute;
+    left: 50%;
+    top: 42px;
+    transform: translate(-50%, 0);
+    width: 90%;
+    /* min-height: 80px; */
+    max-height: 170px;
+    overflow-y: auto;
+    z-index: 100;
+    background-color: #e5e5e599;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.content{
+    height: 100%;
+    width: 100%;
+    color: white;
+    font-size: .8rem;
+    font-weight: bald;
+}

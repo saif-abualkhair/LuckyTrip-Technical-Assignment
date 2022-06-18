@@ -1,5 +1,17 @@
 <div class="main_search_box_group">
+    <div class="loader">
+        <lta-loader [isLoading]="isLoading"></lta-loader>
+    </div>
     <img src="assets/magnifying_glass_small.png" class="search_icon" alt="">
-    <input type="text" class="main_search_box" placeholder="search...">
-    <button type="button" class="go_button">Go</button>
+    <input type="text" (input)="onValueChange($event)"
+        [value]="controlValue? controlValue.city + ', ' + controlValue.country_name : ''" class="main_search_box"
+        placeholder="search..." (focus)="onFocus()" (focusout)="onFocusOut()">
+    <button type="submit" class="go_button" (click)="onGoClick()">Go</button>
+    <ec-popup-window [isPopupOnScreen]="isPopupOnScreen">
+        <ng-container *ngFor="let item of destinationForReturn?.destinations">
+            <div class="drop_down_item" (click)="onItemClick(item)">
+                {{item.city + ', ' + item.country_name}}
+            </div>
+        </ng-container>
+    </ec-popup-window>
 </div>
