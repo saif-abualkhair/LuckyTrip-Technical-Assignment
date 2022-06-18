@@ -1,8 +1,9 @@
 import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { DestinationForReturn } from '../models/destination-for-return.model';
-import { Destination } from '../models/destination.model';
-import { SearchService } from '../services/search.service';
+import { DestinationForList } from '../models/destination/destination-for-list.model';
+import { DestinationInfoForList } from '../models/destination/destination-info-for-list.model';
+
+import { DestinationService } from '../services/destination.service';
 
 @Component({
   selector: 'lta-main-search',
@@ -22,13 +23,13 @@ export class MainSearchComponent implements OnInit, ControlValueAccessor {
   onTouched = () => { };
   isLoading: boolean = false;
   isPopupOnScreen: boolean = false;
-  controlValue?: Destination;
+  controlValue?: DestinationInfoForList;
   isDisabled: boolean = false;
-  destinationForReturn?: DestinationForReturn;
+  destinationForList?: DestinationForList;
   term: string = "";
-  constructor(private searchService: SearchService) { }
+  constructor(private destinationService: DestinationService) { }
 
-  writeValue(value: Destination): void {
+  writeValue(value: DestinationInfoForList): void {
     this.controlValue = value;
   }
 
@@ -52,16 +53,16 @@ export class MainSearchComponent implements OnInit, ControlValueAccessor {
 
   searchValue() {
     this.isLoading = true;
-    this.searchService.getDestinations(this.term).subscribe(data => {
+    this.destinationService.searchDestinations(this.term).subscribe(data => {
+      this.destinationForList = data;
       this.isLoading = false;
-      this.destinationForReturn = data;
     });
   }
 
   ngOnInit(): void {
   }
 
-  onItemClick(item: Destination) {
+  onItemClick(item: DestinationInfoForList) {
     this.onChange(item)
     this.controlValue = item
   }
