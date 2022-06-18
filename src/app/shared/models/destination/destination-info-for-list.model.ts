@@ -1,5 +1,6 @@
-export interface Destination {
-    id: number;
+import { ForList } from "../shared-models/for-list.model";
+
+export interface DestinationInfoForList extends ForList<number> {
     city: string;
     airport_name: string;
     country_name: string;

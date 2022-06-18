@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DestinationResolver } from './destination/destination.resolver';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 const routes: Routes = [
   {
@@ -7,9 +9,18 @@ const routes: Routes = [
     loadChildren: () => import('./home-page/home-page.module').then(m => m.HomePageModule)
   },
   {
-    path: 'Destination',
+    path: 'Destination/:id', resolve: {
+      resolveData: DestinationResolver
+    },
     loadChildren: () => import('./destination/destination.module').then(m => m.DestinationModule)
   },
+  {
+    path: 'error-page', component: ErrorPageComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'error-page'
+  }
 ];
 
 @NgModule({

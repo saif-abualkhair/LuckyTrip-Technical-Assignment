@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DestinationForReturn } from 'src/app/shared/models/destination/destination-for-return.model';
 
 @Component({
   selector: 'lta-destination',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./destination.component.css']
 })
 export class DestinationComponent implements OnInit {
-  
-  constructor() { }
+  destinationForReturn?: DestinationForReturn;
+
+  constructor(private activatedRoute: ActivatedRoute) { }
+
 
   ngOnInit(): void {
+    this.destinationForReturn = this.activatedRoute.snapshot.data['resolveData'] as DestinationForReturn;
   }
-
 }

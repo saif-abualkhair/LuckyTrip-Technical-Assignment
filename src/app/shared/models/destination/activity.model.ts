@@ -1,0 +1,44 @@
+import { ForReturn } from "../shared-models/for-return.model";
+import { Description } from "./description.model";
+import { Thumbnail } from "./Thumbnail.model";
+
+export interface Activity extends ForReturn<number> {
+    destination_id: number;
+    name: string;
+    city: string;
+    country_code: string;
+    country_name: string;
+    currency_code: string;
+    start_day?: number;
+    start_year?: number;
+    start_month?: number;
+    end_day?: number;
+    end_year?: number;
+    end_month?: number;
+    start_timestamp?: number;
+    end_timestamp?: number;
+    minimum_days: number;
+    price: number;
+    latitude: number;
+    longitude: number;
+    adventure_flag: number;
+    nightlife_flag: number;
+    culture_flag: number;
+    romantic_flag: number;
+    chill_flag: number;
+    food_flag: number;
+    hot_flag: number;
+    beach_flag: number;
+    sports_flag: number;
+    winter_sports_flag: number;
+    off_grid_flag: number;
+    winter_flag: number;
+    type: string;
+    booking_url: string;
+    tripadvisor_url: string;
+    is_enabled: string;
+    provider: string;
+    thumbnail: Thumbnail;
+    description: Description;
+    top_fives_position: number;
+}
