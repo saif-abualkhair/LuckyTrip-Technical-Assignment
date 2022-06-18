@@ -23,6 +23,6 @@ export class HomePageComponent implements OnInit {
   }
 
   routeToDestination() {
-    this.router.navigate(['/Destination', { id: this.formGroup.value.mainSearch.id }])
+    this.router.navigate(['/Destination', this.formGroup.value.mainSearch.id])
   }
 }
