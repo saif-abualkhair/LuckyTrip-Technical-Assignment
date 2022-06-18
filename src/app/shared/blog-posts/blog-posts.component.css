@@ -9,7 +9,7 @@
 
 .blog_title {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     position: relative;
     width: 100%;
     flex-flow: row wrap;
