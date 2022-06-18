@@ -21,7 +21,12 @@ export class MainSearchComponent implements OnInit, ControlValueAccessor {
 
   onChange = (_: any) => { };
   onTouched = () => { };
-  isLoading: boolean = false;
+
+  @Output() onNewSearch: EventEmitter<DestinationForList> = new EventEmitter<DestinationForList>();
+  @Output() isLoading: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+
+  _isLoading: boolean = false;
   isPopupOnScreen: boolean = false;
   controlValue?: DestinationInfoForList;
   isDisabled: boolean = false;
@@ -52,10 +57,16 @@ export class MainSearchComponent implements OnInit, ControlValueAccessor {
   }
 
   searchValue() {
-    this.isLoading = true;
+    this._isLoading = true;
+    this.isLoading.emit(this._isLoading);
     this.destinationService.searchDestinations(this.term).subscribe(data => {
       this.destinationForList = data;
-      this.isLoading = false;
+      this.onNewSearch.emit(this.destinationForList);
+      this._isLoading = false;
+      this.isLoading.emit(this._isLoading);
+    },err=>{
+      this._isLoading = false;
+      this.isLoading.emit(this._isLoading);
     });
   }
 

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DestinationForList } from 'src/app/shared/models/destination/destination-for-list.model';
+import { DestinationInfoForList } from 'src/app/shared/models/destination/destination-info-for-list.model';
+import { DestinationService } from 'src/app/shared/services/destination.service';
 
 @Component({
   selector: 'lta-home-page',
@@ -9,11 +12,21 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
   formGroup!: FormGroup;
-
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  destinationForList?: DestinationForList;
+  isLoading: boolean = false;
+  constructor(private formBuilder: FormBuilder,
+    private router: Router,
+    private destinationService: DestinationService) { }
 
   ngOnInit(): void {
     this.buildSearchForm();
+    this.getTrendingSection();
+  }
+
+  getTrendingSection() {
+    this.destinationService.searchDestinations('').subscribe(data => {
+      this.destinationForList = data;
+    });
   }
 
   buildSearchForm() {
@@ -22,7 +35,23 @@ export class HomePageComponent implements OnInit {
     })
   }
 
-  routeToDestination() {
-    this.router.navigate(['/Destination', this.formGroup.value.mainSearch.id])
+  onPostClick($event: DestinationInfoForList) {
+    this.routeToDestination($event.id);
+  }
+
+  isSearchLoading($event: boolean) {
+    this.isLoading = $event;
+  }
+
+  onNewSearch($event: DestinationForList) {
+    this.destinationForList = $event;
+  }
+
+  routeToDestination(id: number) {
+    this.router.navigate(['/Destination', id])
+  }
+
+  onSubmit() {
+    this.routeToDestination(this.formGroup.value.mainSearch.id);
   }
 }

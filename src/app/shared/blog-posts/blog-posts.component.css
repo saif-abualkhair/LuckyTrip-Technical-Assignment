@@ -27,6 +27,10 @@
 .blog_post_card {
     background-color: #a3a9c5;
     display: inline-block;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
     /* max-width: 300px; */
     min-width: 350px;
     min-height: 250px;
@@ -41,4 +45,18 @@
     -ms-transition: all 250ms ease-in-out;
     -webkit-transition: all 250ms ease-in-out;
     -o-transition: all 250ms ease-in-out;
+}
+
+.blog_post_card:hover{
+    transform: scale(1.1);
+}
+
+.no_posts_text{
+    color: white;
+}
+
+.loader{
+    position: absolute;
+    top: 0;
+    left: 50%;
 }

@@ -1,6 +1,6 @@
 <div class="main_search_box_group">
     <div class="loader">
-        <lta-loader [isLoading]="isLoading"></lta-loader>
+        <lta-loader [isLoading]="_isLoading"></lta-loader>
     </div>
     <img src="assets/magnifying_glass_small.png" class="search_icon" alt="">
     <input type="text" (input)="onValueChange($event)"

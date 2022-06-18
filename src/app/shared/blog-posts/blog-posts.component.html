@@ -1,10 +1,21 @@
+<!-- <div class="loader">
+    <lta-loader [isLoading]="isLoading"></lta-loader>
+</div> -->
+
 <div class="blog_title">
     <h3 class="title">{{title}}</h3>
 </div>
 <div class="blog_posts">
-    <ng-container *ngFor = "let post of posts">
-        <div class="blog_post_card">
+    <ng-container *ngFor="let post of posts">
+        <div class="blog_post_card" (click)="_onPostClick(post)" [style.background-image]="'url('+ post?.image_url  + ')'">
 
         </div>
     </ng-container>
+
+    <ng-container *ngIf="posts && posts.length < 1">
+        <div class="no_posts">
+            <p class="no_posts_text">No posts found</p>
+        </div>
+    </ng-container>
+
 </div>

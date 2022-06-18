@@ -6,8 +6,9 @@
                     <p class="text_large">Search LuckyTrip</p>
                     <p class="description text_small"> 350 destinations, 1500 blog posts, Unlimited Trips</p>
                     <div class="search_box_area">
-                        <form [formGroup] = "formGroup" (ngSubmit)="routeToDestination()">
-                            <lta-main-search [formControlName] = "'mainSearch'"></lta-main-search>
+                        <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+                            <lta-main-search [formControlName]="'mainSearch'" (isLoading)="isSearchLoading($event)"
+                                (onNewSearch)="onNewSearch($event)"></lta-main-search>
                         </form>
                     </div>
                 </div>
@@ -15,6 +16,6 @@
         </div>
     </div>
     <lta-content-area>
-        <lta-blog-posts [title]="'Trending'" [posts]="[1,2,3,4,5,6]"></lta-blog-posts>
+        <lta-blog-posts [title]="'Trending'" [posts]="destinationForList?.destinations" [isLoading]="isLoading" (onPostClick)="onPostClick($event)"></lta-blog-posts>
     </lta-content-area>
 </div>

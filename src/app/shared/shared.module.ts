@@ -28,6 +28,7 @@ import { LoaderComponent } from './loader/loader.component';
     ContentAreaComponent,
     FormsModule,
     ReactiveFormsModule,
+    LoaderComponent
   ]
 })
 export class SharedModule { }
