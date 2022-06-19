@@ -1,6 +1,7 @@
 <div class="home_page">
     <div class="page_image_container">
-        <div class="page_image img vignette_effect">
+        <div class="page_image img vignette_effect" role="img" aria-label="Page Background Img"
+            title="Page Background Img">
             <div class="page_image_content">
                 <div class="text">
                     <p class="text_large">Search LuckyTrip</p>
@@ -16,6 +17,7 @@
         </div>
     </div>
     <lta-content-area>
-        <lta-trending [posts]="destinationForList?.destinations" [isLoading]="isLoading" (onPostClick)="onPostClick($event)"></lta-trending>
+        <lta-trending [posts]="destinationForList?.destinations" [isLoading]="isLoading"
+            (onPostClick)="onPostClick($event)"></lta-trending>
     </lta-content-area>
 </div>

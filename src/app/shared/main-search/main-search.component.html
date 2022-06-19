@@ -4,9 +4,8 @@
     </div>
     <picture class="search_icon">
         <source media="(min-width:465px)" srcset="assets/magnifying_glass_large.png">
-        <img src="assets/magnifying_glass_small.png" alt="Flowers" style="width:auto;">
+        <img src="assets/magnifying_glass_small.png" alt="Search Icon">
     </picture>
-    <!-- <img src="assets/magnifying_glass_small.png" class="search_icon" alt=""> -->
     <input type="text" (input)="onValueChange($event)"
         [value]="controlValue? controlValue.city + ', ' + controlValue.country_name : ''" class="main_search_box"
         placeholder="search..." (focus)="onFocus()" (focusout)="onFocusOut()">

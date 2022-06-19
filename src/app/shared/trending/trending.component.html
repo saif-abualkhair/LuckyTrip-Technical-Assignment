@@ -7,7 +7,9 @@
 </div>
 <div class="trending_posts">
     <ng-container *ngFor="let post of posts">
-        <div class="trending_post_card" (click)="_onPostClick(post)" [style.background-image]="'url('+ post?.image_url  + ')'">
+        <div class="trending_post_card" (click)="_onPostClick(post)" role="img"
+            aria-label="Trending Post Page Background Img" title="Trending Post Page Background Img"
+            [style.background-image]="'url('+ post?.image_url  + ')'">
 
         </div>
     </ng-container>
