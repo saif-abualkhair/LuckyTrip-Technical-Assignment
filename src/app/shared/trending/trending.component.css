@@ -1,0 +1,59 @@
+.trending_posts {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    flex-flow: row wrap;
+    box-sizing: border-box;
+}
+
+.trending_title {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    width: 100%;
+    flex-flow: row wrap;
+    box-sizing: border-box;
+    color: #7bfbff;
+    font-size: 1.5rem;
+    align-items: flex-end;
+}
+
+.title {
+    padding: 0px;
+    margin: 0px;
+}
+
+.trending_post_card {
+    background-color: #a3a9c5;
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    /* max-width: 300px; */
+    min-width: 350px;
+    min-height: 250px;
+    margin: 1rem 1rem 0 0;
+    box-shadow: 0 1px 3px 0 rgba(58, 62, 75, 0.25);
+    flex: 0 0 25%;
+    align-items: flex-start;
+    align-content: flex-start;
+    border-radius: 8px;
+    flex-grow: 1;
+}
+
+.trending_post_card:hover{
+    transform: scale(1.1);
+    transition: all 350ms ease-in-out;
+}
+
+.no_posts_text{
+    color: white;
+}
+
+.loader{
+    position: absolute;
+    top: 0;
+    left: 50%;
+}

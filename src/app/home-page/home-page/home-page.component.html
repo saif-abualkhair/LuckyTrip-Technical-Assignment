@@ -16,6 +16,6 @@
         </div>
     </div>
     <lta-content-area>
-        <lta-blog-posts [title]="'Trending'" [posts]="destinationForList?.destinations" [isLoading]="isLoading" (onPostClick)="onPostClick($event)"></lta-blog-posts>
+        <lta-trending [posts]="destinationForList?.destinations" [isLoading]="isLoading" (onPostClick)="onPostClick($event)"></lta-trending>
     </lta-content-area>
 </div>

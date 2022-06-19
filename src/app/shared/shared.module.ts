@@ -6,12 +6,14 @@ import { ContentAreaComponent } from './content-area/content-area.component';
 import { PopupWindowComponent } from './popup-window/popup-window.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoaderComponent } from './loader/loader.component';
+import { TrendingComponent } from './trending/trending.component';
 
 
 
 @NgModule({
   declarations: [
     BlogPostsComponent,
+    TrendingComponent,
     MainSearchComponent,
     ContentAreaComponent,
     PopupWindowComponent,
@@ -24,6 +26,7 @@ import { LoaderComponent } from './loader/loader.component';
   ],
   exports:[
     BlogPostsComponent,
+    TrendingComponent,
     MainSearchComponent,
     ContentAreaComponent,
     FormsModule,
