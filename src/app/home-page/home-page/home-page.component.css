@@ -21,13 +21,13 @@
 }
 
 .search_box_area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    max-width: 300px;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 15px;
 }
 
-.description{
+.description {
     color: #e4dde3;
 }
-
