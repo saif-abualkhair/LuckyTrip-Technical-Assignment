@@ -18,6 +18,11 @@
     flex: 1;
 }
 
+.logo{
+    height: 50px;
+    width: auto;
+}
+
 .search {
     height: 40px;
     position: relative;

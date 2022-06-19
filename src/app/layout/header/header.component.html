@@ -5,7 +5,9 @@
        </a>
     </div>
     <div class="search">
-        <lta-main-search *ngIf = "isSearchVisable"></lta-main-search>
+        <form [formGroup] = "formGroup" (ngSubmit)="onSubmit()" *ngIf = "isSearchVisable">
+            <lta-main-search [formControlName] = "'mainSearch'"></lta-main-search>
+        </form>
     </div>
     <div class="dumy">
         <!-- come back to after done -->

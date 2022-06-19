@@ -12,7 +12,8 @@ const routes: Routes = [
     path: 'Destination/:id', resolve: {
       resolveData: DestinationResolver
     },
-    loadChildren: () => import('./destination/destination.module').then(m => m.DestinationModule)
+    loadChildren: () => import('./destination/destination.module').then(m => m.DestinationModule),
+    runGuardsAndResolvers: 'always',
   },
   {
     path: 'error-page', component: ErrorPageComponent
@@ -24,7 +25,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
