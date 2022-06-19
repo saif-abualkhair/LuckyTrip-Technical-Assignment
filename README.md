@@ -27,7 +27,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 
-##Project Notes
+## Project Notes
 
 No External Libraries were used with this Project, everything is Contained and Maintained to the Scope of the Project, Reasons for this is the Following: 
 
