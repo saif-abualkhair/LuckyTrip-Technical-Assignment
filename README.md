@@ -42,5 +42,9 @@ No External Libraries were used with this Project, everything is Contained and M
 I also Decided to use the Control Value Accessor Interface on the Component to make it as Reusable as Possible, this Benefited me because the Routing Implementation Differs between the Search Control in the Home-page and the one in the Header.
    
 that said I am also very Capable of using Famous control/ui libraries such as primeng material ui and Kendo UI.
+
+I did the bonus points you mentioned in the assignment file, check them out, one point is that I used a generic Error page I found online, please don't judge me for it 🙈.
+
+One last thing is that I know that the front page needs an infinite scroll implemented, I didn't want to do anything that would change the project too much, although it would improve the performance
    
 I had lots of fun working on this assignment and thank you for the consideration.
