@@ -28,6 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 ##Project Notes
+
 No External Libraries were used with this Project, everything is Contained and Maintained to the Scope of the Project, Reasons for this is the Following: 
 
 1- I didn't want to use any css Libraries like Bootstrap or Tailwind because I wanted to Show off my css Skills rather than use my Class Memorization Abilities, that said I am very able to use those libraries.
