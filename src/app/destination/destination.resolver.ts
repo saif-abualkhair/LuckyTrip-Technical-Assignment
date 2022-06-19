@@ -17,7 +17,6 @@ export class DestinationResolver implements Resolve<DestinationForReturn> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): DestinationForReturn | Observable<DestinationForReturn> | Promise<DestinationForReturn> {
     return this.destinationService.getDestination(route.params['id']).pipe(tap(v => {
-      console.log(v)
     }, err => {
       this.router.navigate(['error-page']);
     }));

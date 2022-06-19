@@ -43,11 +43,11 @@
     color: #ff7d9c;
 }
 
-.lucky_button{
+.lucky_button {
     cursor: pointer;
     border-radius: 50%;
     box-shadow: 0 0 0 0px rgba(255, 125, 156, 0.5);
-    animation: breath infinite 3s ;
+    animation: breath infinite 3s;
 }
 
 @keyframes breath {
@@ -56,10 +56,12 @@
         /* add neon box shadow */
         box-shadow: none;
     }
+
     50% {
         transform: scale(1.1);
         box-shadow: 0 0 0 0px rgba(255, 125, 156, 0.5);
     }
+
     100% {
         transform: scale(1);
         box-shadow: none;
